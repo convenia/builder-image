@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+# jsonenv reads a json object as input and produces
+# escaped shell commands for setting environment vars
+
+import json
+import sys
+
+for k, v in json.load(sys.stdin).items():
+    print("%s=%s" % (k, v))
