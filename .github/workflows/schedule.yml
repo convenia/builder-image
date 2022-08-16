@@ -1,0 +1,11 @@
+name: scheduled-build
+
+on:
+  schedule:
+    - cron:  '0 0 * * 6'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -X POST ${{ secrets.BUILD_URL }}
